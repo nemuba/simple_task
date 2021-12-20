@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+
+.btn-primary {
+  @apply btn bg-blue-500 text-white;
+}
+
+.btn-success {
+  @apply btn bg-green-500 text-white;
+}
+
+.btn-danger {
+  @apply btn bg-red-500 text-white;
+}
+
+.btn-warning {
+  @apply btn bg-yellow-500 text-white;
+}
+
+.btn-info {
+  @apply btn bg-teal-500 text-white;
+}
+
+.form {
+  @apply w-full bg-white shadow-md rounded px-8 pt-6 pb-8;
+}
+
+.form .label {
+  @apply block text-gray-700 text-sm font-bold mb-2;
+}
+
+.form .input-field {
+  @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+}
+
+.form .input-field:focus {
+  @apply outline-none;
+}
+
+.form .checkbox {
+  @apply flex p-4 bg-blue-400 border-2 m-2;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SimpleTask</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body class="flex lg:flex-row md:flex-row sm:flex-col">
+    <%= render "shared/navbar" %>
+    <div class="container border w-full h-auto min-h-screen">
+      <%= yield %>
+    </div>
+  </body>
+</html>

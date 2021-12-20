@@ -1,0 +1,30 @@
+<%= form_with(model: task, html: { class: 'form'}) do |form| %>
+  <% if task.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-6">
+    <%= form.label :title, class: 'label'  %>
+    <%= form.text_field :title, class: 'form-input w-full p-2 rounded' %>
+  </div>
+
+
+  <div>
+    <%= form.label :status,  class: 'label' %>
+    <%= form.check_box :status, class: 'form-checkbox h-5 w-5 text-blue-600 rounded' %>
+  </div>
+
+  <div class="flex justify-between mt-6">
+    <%= form.submit nil, class: 'btn-primary' %>
+
+    <%= link_to 'Cancelar', root_url, class: 'btn-danger' %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<!-- component -->
+<nav class="col-span-2 rounded-md w-96 h-full justify-between">
+	<div class=" bg-white h-full">
+		<div class="flex  justify-center py-10 shadow-sm pr-4">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-indigo-600" fill="none" viewBox="0 0 24 24"
+				stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+					d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+			</svg>
+			<div class="pl-2">
+				<%= link_to root_path do %>
+					<p class="text-2xl font-bold text-indigo-600">TASKS</h1>
+					<span class="text-xs block text-gray-800">Lists</span>
+				<% end %>
+			</div>
+		</div>
+		<div class="pl-10 mb-6">
+      <div  class="w-full mt-6">
+        <%= link_to '+ New Task', new_task_path, class: 'btn-primary', 'data-turbo-frame': 'task' %>
+      </div>
+
+			<ul id="tasks" class="space-y-8 pt-10">
+			 <%= render @tasks %>
+			</ul>
+		</div>
+	</div>
+	<div class="bg-white flex items-center space-x-4 pl-10 pb-10 hover:text-indigo-600 cursor-pointer">
+		<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+				d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+		</svg>
+		<a href="/loguot">Logout</a>
+	</div>
+</nav>

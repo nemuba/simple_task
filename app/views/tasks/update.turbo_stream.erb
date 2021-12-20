@@ -1,0 +1,10 @@
+
+<%= turbo_stream.replace(@task, target: '#tasks') do %>
+  <%=  render partial: 'tasks/task', locals: { task: @task } %>
+<% end %>
+
+<%= turbo_stream.replace :task do %>
+  <%= turbo_frame_tag :task do %>
+    <%= render partial: 'shared/dashboard' %>
+  <% end %>
+<% end %>

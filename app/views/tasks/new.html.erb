@@ -1,0 +1,4 @@
+<%= turbo_frame_tag :task do %>
+  <h1 class="text-4xl font-bold m-6 text-gray-600">New task</h1>
+  <%= render "form", task: @task %>
+<% end %>
