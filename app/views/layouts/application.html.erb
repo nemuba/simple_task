@@ -8,11 +8,15 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= hotwire_livereload_tags %>
+
   </head>
 
   <body class="flex lg:flex-row md:flex-row sm:flex-col">
     <%= render "shared/navbar" %>
     <div class="container border w-full h-auto min-h-screen">
+    <h1 class="text-center text-4xl p-4 border">Tasks</h1>
+
       <%= yield %>
     </div>
   </body>

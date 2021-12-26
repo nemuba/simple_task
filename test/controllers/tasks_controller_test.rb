@@ -1,7 +1,11 @@
 require "test_helper"
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
+    get '/users/sign_in'
+    sign_in users(:one)
     @task = tasks(:one)
   end
 
@@ -20,7 +24,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
       post tasks_url, params: { task: { status: @task.status, title: @task.title } }
     end
 
-    assert_redirected_to task_url(Task.last)
+    assert_redirected_to root_url
   end
 
   test "should show task" do
@@ -35,7 +39,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
   test "should update task" do
     patch task_url(@task), params: { task: { status: @task.status, title: @task.title } }
-    assert_redirected_to task_url(@task)
+    assert_redirected_to root_url
   end
 
   test "should destroy task" do
@@ -43,6 +47,6 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
       delete task_url(@task)
     end
 
-    assert_redirected_to tasks_url
+    assert_redirected_to root_url
   end
 end

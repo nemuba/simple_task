@@ -2,14 +2,14 @@
   <div class="flex flex-col border border-green-500 p-4 text-center w-96 h-96 mt-3 shadow-md rounded-md">
     <h1 class="text-4xl font-serif">Complete</h1>
     <span class="font-semibold p-20 mt-6 text-9xl">
-      <%= Task.completed %>
+      <%= current_user.tasks.completed %>
     </span>
   </div>
 
-  <div class="flex flex-col border p-4 text-center w-96 h-96 mt-3 shadow-sm rounded-md">
+  <div class="flex flex-col border border-purple-500 p-4 text-center w-96 h-96 mt-3 shadow-sm rounded-md">
     <h1 class="text-4xl font-serif">Incomplete</h1>
     <span class="font-semibold p-20 mt-6 text-9xl">
-      <%= Task.incomplete %>
+      <%= current_user.tasks.incomplete %>
     </span>
   </div>
 </div>

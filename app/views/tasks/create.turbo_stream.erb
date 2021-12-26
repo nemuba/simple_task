@@ -1,6 +1,6 @@
-<%= turbo_stream.append('tasks') do %>
-  <%= render partial: 'tasks/task', locals: { task: @task } %>
-<% end %>
+<%# turbo_stream.append('tasks') do %>
+  <%# render partial: 'tasks/task', locals: { task: @task } %>
+<%# end %>
 
 <%= turbo_stream.replace :task do %>
   <%= turbo_frame_tag :task do %>

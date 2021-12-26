@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
   <div class="mb-6">
     <%= form.label :title, class: 'label'  %>
     <%= form.text_field :title, class: 'form-input w-full p-2 rounded' %>

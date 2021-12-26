@@ -1,0 +1,16 @@
+<h2>Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'form h-screen' }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-input w-full rounded' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions", class: 'btn-primary my-2' %>
+  </div>
+  <%= render "users/shared/links" %>
+<% end %>
+
