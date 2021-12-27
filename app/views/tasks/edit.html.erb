@@ -1,9 +1,5 @@
 <%= turbo_frame_tag :task do %>
   <h1 class="text-4xl text-gray-600 m-6">Editing task</h1>
-  <div>
-    <%= link_to "Show this task", @task , class: 'btn-info m-6 font-medium' %>
-  </div>
 
   <%= render "form", task: @task %>
-
 <% end %>

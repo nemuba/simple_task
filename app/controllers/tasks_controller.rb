@@ -31,6 +31,7 @@ class TasksController < ApplicationController
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @task.errors, status: :unprocessable_entity }
+        format.turbo_stream
       end
     end
   end
@@ -68,6 +69,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:title, :status)
+      params.require(:task).permit(:title, :status, :user_id)
     end
 end
