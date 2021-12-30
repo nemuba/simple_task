@@ -1,5 +1,9 @@
 <%# turbo_stream.remove(@task) %>
 
+<%= turbo_stream.update :messages do %>
+  <%= render partial: 'shared/flash', locals: { key: 'error', message: 'Task removed successfully' } %>
+<% end %>
+
 <%= turbo_stream.replace :task do %>
   <%= turbo_frame_tag :task do %>
     <%= render partial: 'shared/dashboard' %>

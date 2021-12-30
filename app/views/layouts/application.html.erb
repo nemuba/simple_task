@@ -15,7 +15,13 @@
   <body class="flex lg:flex-row md:flex-row sm:flex-col">
     <%= render "shared/navbar" %>
     <div class="container border w-full h-auto min-h-screen">
-    <h1 class="text-center text-4xl p-4 border">Tasks</h1>
+      <%= turbo_frame_tag :messages %>
+      
+      <% flash.each do |key, message| %>
+        <%= render partial: 'shared/flash', locals: { key: key, message: message } %>
+      <% end %>
+
+      <h1 class="text-center text-4xl p-4 border">Tasks</h1>
 
       <%= yield %>
     </div>

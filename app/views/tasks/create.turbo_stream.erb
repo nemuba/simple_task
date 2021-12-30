@@ -9,6 +9,10 @@
 
 <% else %>
 
+  <%= turbo_stream.update :messages do %>
+    <%= render partial: 'shared/flash', locals: { key: 'notice', message: 'Task created with successfully' } %>
+  <% end %>
+
   <%= turbo_stream.replace :task do %>
     <%= turbo_frame_tag :task do %>
       <%= render partial: 'shared/dashboard' %>
