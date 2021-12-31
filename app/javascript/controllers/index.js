@@ -7,6 +7,9 @@ import { application } from "./application"
 import FlashController from "./flash_controller.js"
 application.register("flash", FlashController)
 
+import FormController from "./form_controller.js"
+application.register("form", FormController)
+
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 
