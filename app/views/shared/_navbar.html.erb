@@ -34,9 +34,22 @@
 				</div>
 				
         <%= turbo_stream_from :tasks %>
-				<ul id="tasks" class="space-y-8 pt-10">
-						<%= render @tasks %>
-				</ul>
+
+				<div class="space-y-8 pt-10 mr-4 mb-5">
+					<%= form_with(
+						url: root_path, 
+						method: :get,
+						class: 'flex flex-col',
+						data: { controller: 'task', turbo_frame: 'tasks',turbo_action: 'advance'}
+					) do |f| %>
+					  <%= f.label :query, 'Pesquisar' %>
+						<%= f.text_field :query, data: { action: 'input->task#search'} %>
+					<% end %>
+				</div>
+
+				<%= turbo_frame_tag :tasks, class: 'space-y-8 pt-10' do %>
+					<%= render @tasks %>
+				<% end %>
 		</div>
 	</div>
 	
