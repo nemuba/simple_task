@@ -255,7 +255,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
-  turbo-rails
+  turbo-rails (~> 7.1.1)
   tzinfo-data
   web-console
   webdrivers
