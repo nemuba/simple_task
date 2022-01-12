@@ -1,6 +1,6 @@
 <h2 class="mx-10 my-2 font-bold text-4xl">Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form h-screen'}) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form h-screen', 'data-turbo': false}) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="mb-6">

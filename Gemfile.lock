@@ -97,6 +97,10 @@ GEM
       responders
       warden (~> 1.2.3)
     digest (3.1.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -244,6 +248,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.8.1)
+  dotenv-rails
   hotwire-livereload
   jbuilder
   jsbundling-rails
@@ -255,7 +260,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
-  turbo-rails (~> 7.1.1)
+  turbo-rails
   tzinfo-data
   web-console
   webdrivers

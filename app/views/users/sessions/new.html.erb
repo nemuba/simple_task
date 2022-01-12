@@ -1,6 +1,6 @@
 <h2 class="mx-10 my-2 font-bold text-4xl">Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form h-screen'}) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form h-screen', 'data-turbo': false}) do |f| %>
   <div class="mb-6">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-input w-full p-2 rounded' %>

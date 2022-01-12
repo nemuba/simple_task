@@ -9,7 +9,7 @@ class TasksController < ApplicationController
       @tasks = current_user.tasks
     end
     
-    if turbo_frame_request?
+    if turbo_frame_request? && controller_name == 'tasks'
       render partial: 'tasks', locals: { tasks: @tasks }
     else
       render 'index'
